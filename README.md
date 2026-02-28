@@ -75,10 +75,11 @@ Validating on-device latency, RAM usage, and inference time is critical. Once th
 If you use this repository in your research, please cite:
 
 ```bibtex
+
 @article{garai2025oasi,
   title={OASI: Objective-Aware Surrogate Initialization for Multi-Objective Bayesian Optimization in TinyML Keyword Spotting},
-  author={Garai, Soumen and Pau, Danilo and Samui, Suman},
-  journal={IEEE Embedded Systems Letters},
+  author={Garai, Soumen and Samui, Suman},
+  journal={arXiv preprint arXiv:2512.19739},
   year={2025}
 }
 ```
