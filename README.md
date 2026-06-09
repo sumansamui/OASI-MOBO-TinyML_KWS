@@ -1,4 +1,4 @@
-# OASI: Objective-Aware Surrogate Initialization for Multi-Objective Bayesian Optimization in TinyML Keyword Spotting
+# OASI: Objective-Aware Surrogate Initialization for Multi-Objective Bayesian Optimization in TinyML
 
 This repository contains the experimental pipeline for optimizing Keyword Spotting (KWS) models for edge deployment. The framework utilises a Depthwise Separable Convolutional Neural Network (DSCNN) architecture and employs **OASI: Objective-Aware Surrogate Initialisation for Multi-Objective Bayesian Optimisation** to find the optimal trade-off between Validation Accuracy and Model Size (MB). The optimization pipeline leverages an Objective-Aware Surrogate Initialization (OASI) combined with Multi-Objective Bayesian Optimization (MOBO), culminating in Hardware-in-the-Loop (HIL) validation.
 
