@@ -32,6 +32,10 @@ pip install -r requirements.txt
 
 The search and evaluation process is divided into three distinct stages. Execute the scripts in the following order:
 
+## Hyperparameter Configuration
+
+The pipeline exposes a standard set of tunable hyperparameters; the values below are the defaults used to produce the reported results and can be adjusted to suit other datasets or budgets. **Search space (DS-CNN):** convolutional depth `L ∈ {1,2,3}`, width `w ∈ [16,64]`, kernel `k ∈ {3×3, 5×5}`, filter multiplier `f ∈ {1,2,3}`, dropout `0.3`, and dense units `U ∈ [32,128]`, optimizing validation accuracy against model size (KB) under a hard SRAM/Flash budget (default `2 MB`). **OASI / MOSA initialization:** `N_chain = 5` chains × `N_iter = 50` iterations = a `250`-candidate pool, from which `N_init = 15` seeds are selected by maximin diversity (or lowest-`J(h)` for the OASI-JSelect variant); annealing uses initial temperature `T0 = 0.2` on normalized per-objective deltas with an exponential cooling rate `α = 0.012` and Gaussian perturbation scale `0.15`. **MOBO:** Gaussian-Process surrogates with the `qEHVI` acquisition function, run for `50` iterations (total budget `250 + 50 = 300` evaluations per method). **Per-candidate training:** Adam (`lr = 1e-3`, `β1 = 0.9`, `β2 = 0.999`), batch size `64`, up to `100` epochs with early stopping (patience `10`), on `40`-bin log-Mel features. All results are averaged over `30` independent runs. These defaults are exposed at the top of the respective scripts and may be freely tuned.
+
 ### Step 1: Generate Initial Population
 
 Run the initialization script to generate the foundational Pareto archive using OASI. This script should be set to run for **30 iterations** to build a robust starting population for the Bayesian search.
